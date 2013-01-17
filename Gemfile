@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.1'
 
 # Bundle edge Rails instead:
@@ -26,6 +26,10 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara', '1.1.2'
+end
+
+group :production do
+  gem 'pg', '0.12.2'
 end
 
 # To use ActiveModel has_secure_password
