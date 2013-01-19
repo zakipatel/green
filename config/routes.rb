@@ -4,6 +4,8 @@ Green::Application.routes.draw do
   #get "static_pages/about"
   #get "static_pages/contact"
   
+  resources :users
+  
   match '/signup',  to: 'users#new'
 
   match '/help',    to: 'static_pages#help'
@@ -11,7 +13,7 @@ Green::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   
   #get "static_pages/help"
-  resources :users
+  
 
   
 
