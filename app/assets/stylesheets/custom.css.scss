@@ -1,10 +1,6 @@
 @import "bootstrap";
 
-
-
 /* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -12,60 +8,7 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
- /* width: 100%; */
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-  /* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-}
-
-footer a {
-  color: #555;
-}  
-
-footer a:hover { 
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-}
+$grayMediumLight: #eaeaea;
 
 /* universal */
 
@@ -87,10 +30,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+   margin-bottom: 10px;
+  }
 }
 
 /* typography */
@@ -120,19 +62,87 @@ p {
   line-height: 1.7em;
 }
 
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: $grayLight;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  &:hover {
+   color: $grayLight;
+   text-decoration: none;
+ }
 }
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $grayLight;
+  a {
+   color: $gray;
+   &:hover { 
+     color: $grayDarker; 
+   }
+  }  
 }
+
+small {
+  float: left;
+}
+
+ul {
+  float: right;
+  list-style: none;
+  
+  li {
+   float: left;
+   margin-left: 10px;
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+ /* width: 100%; */
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+  
+#error_explanation {
+  color: $grayLight;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }

@@ -1,2 +1,46 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+THESE ARE THE MODELS
+
+1. USER has a LOGIN
+2. USER has a ACCOUNT
+3. ACCOUNT has many TRANSACTIONS PERFORMED USING METHODS (NEW, LOAD, HISTORY, TRANSFER, SUSPEND, CLOSE .. )
+4. TRANSACTIONS CREATE FOOTPRINTS (PIN, TIME, LOCATION, ACCOUNT, STATUS, CATEGORY. .. )
+5. USERS load ACCOUNTS with TRANSACTIONS
+6. TRANSACTIONS get UPDATED (i.e user#load --> increases balance)
+
+.. notion of 'bank' .. need to know "supply or value of transactions in customers hands
+vs. in retail/distribution - this is equal or should be equal to the 'value that has been printed' .. or whatever is printed is either active' or inactive'
+
+if its active, that means its either in the MARKET or with the CONSUMER. 
+
+through sales and dist , we keep track of what is ISSUED in the market (both PINs and VLAUE! If its ISSUED, its IN MARKET
+
+we get REGULAR updates of the SOLD IN MARKET PINs  (and implicitly the 'value'), sold in the market (daily? weekly, monthly). 
+
+There is a lag.  
+
+CONSUMERS can ACTIVATE ASAP --> IN MARKET/ACTIVE 
+
+Whereas, IN MARKET/SOLD  might happen after the fact 
+
+If in market, customer can activate
+Once customer activates, it can be redeemed 
+
+We use this to control 
+- What is PRINTED (pins and values) - these are not issued
+- What we ISSUE (pins and value) - this issues (ready for sales, distribution, retail)
+- What is IN MARKET (pins and value) - printed PINS are IN MARKET (i.e. ready to be made ACTIVE)  
+- What is ACTIVE (by consumers) - done via sms, web, phone. these are ready to REDEEM  
+- What is reported SOLD (by sales, retail and distribution). this is afterthefact. use this for the vendor portal to track what is OWED IN CASH (tie the 'notion of bank')
+
+- WHAT IS CONSUMED - i.e. used on E-COMMERCE by CONSUMERS. 
+- PAYMENT PLUG IN gets ETAILER SALES - use this for e-tailer portal 
+
+Drive loyalty / engagement / advertising / campaign
+
+
+
+ (and value before we )
+
