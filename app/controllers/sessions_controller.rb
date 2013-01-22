@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+    # user = User.find_by_email(params[:session][:email].downcase)
   	 sign_out
      redirect_to root_url
 	end
