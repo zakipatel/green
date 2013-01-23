@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
 
   # private defined further down
-  before_filter :signed_in_user, only: [:index, :edit, :update] #:destroy, :show
+  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy] # :show
   before_filter :correct_user,   only: [:edit, :update] # :destroy, :show
-  
+  before_filter :admin_user,     only: :destroy
    
 
   # GET /users
