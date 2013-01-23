@@ -1,4 +1,19 @@
 class UsersController < ApplicationController
+  
+
+
+  #The authorization application code uses a before filter, which 
+  # To require users to be signed in, we define a signed_in_user method and 
+  # invoke it using before_filter :signed_in_user,arranges for a particular method 
+  # to be called before the given actions
+
+
+  # private defined further down
+  before_filter :signed_in_user, only: [:index, :edit, :update] #:destroy, :show
+  before_filter :correct_user,   only: [:edit, :update] # :destroy, :show
+  
+   
+
   # GET /users
   # GET /users.json
   def index
@@ -83,4 +98,20 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+    private
+
+      def signed_in_user
+       unless signed_in?
+          store_location  # in session helper
+          redirect_to signin_url, notice: "Please sign in." unless signed_in?
+       end 
+      end
+
+      def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_path) unless current_user?(@user) # session helper
+      end
+
+    
 end
